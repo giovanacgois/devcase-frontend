@@ -1,1 +1,53 @@
 /* You can add global styles to this file, and also import other style files */
+.nav{
+    display: block !important;
+    height: 75px;
+    background-color: #374f78;
+}
+
+.table .thead-dark th{
+    background-color: #374f78 !important;
+}
+
+th{
+    font-weight: normal;
+}
+h1{
+    color:#142645;
+    padding-bottom: 20px;
+}
+.navLogo{
+    display: block;
+    box-sizing: border-box;
+    padding: 20px;
+    height: 75px;
+    width: 250px;
+    background-color: #142645;
+    float: left;
+    box-shadow: 3px 0 6px rgba(0, 0, 0, 0.3);
+        background-image: url("src\assets\img\logo-fidelidade.png")
+}
+
+.nav-item{
+    margin: 0;
+    padding: 5px 0 0 0;
+    list-style-type: none;
+    margin-right: 2px;
+}
+
+.nav-item a {
+     color: #ffffff;
+}
+
+.nav-ul{
+    float: right;
+}
+
+.nav-ul li{
+    text-align: center;
+    display: inline-block;
+    padding-top: 20px;
+}
+.container{
+margin-top: 50px;
+}

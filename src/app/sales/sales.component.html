@@ -1,0 +1,60 @@
+<div class="container">
+  <h1>Nova Venda</h1>
+
+  <!--FORM BEGINS: Sales Data-->
+  <form class="needs-validation" (ngSubmit)="sendSale()" #sendSaleForm="ngForm">
+
+    <!--FIRST ROW: NAME, CPF AND BIRTHDAY-->
+
+    <!--Client Name-->
+    <div class="form-row">
+      <div class="col-md-4 mb-3">
+        <label for="validationTooltip01">ID Cliente</label>
+        <input type="numeric" class="form-control" id="inputClientID" name="salesClientID" placeholder="Insira ID do Cliente"
+          minlength="1" minvalue="1" [(ngModel)]="model.salesClientID" #salesClientID="ngModel" required>
+        <div *ngIf="salesClientID.invalid && (salesClientID.dirty || salesClientID.touched)" class="alert alert-danger">
+          <div *ngIf="salesClientID.errors.required">
+            Preencha o ID do cliente.
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-3">
+        <label for="validationTooltip01">Valor da Venda</label>
+        <input type="numeric" class="form-control" id="inputSaleValue" name="saleValue"
+          placeholder="Insira o valor da venda" minlength="1" minvalue="0" [(ngModel)]="model.saleValue"
+          #saleValue="ngModel" required>
+        <div *ngIf="saleValue.invalid && (saleValue.dirty || saleValue.touched)" class="alert alert-danger">
+          <div *ngIf="saleValue.errors.required">
+            Informe o valor da venda.
+          </div>
+        </div>
+      </div>
+      </div>
+
+      <!--Form Submit-->
+      <button class="btn btn-primary" type="submit" [disabled]="!sendSaleForm.form.valid">Gravar Venda</button>
+
+      <!--END OF Client Data Form-->
+  </form>
+
+  <h1>Vendas Realizadas</h1>
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">ID do Cliente</th>
+        <th scope="col">Vaor da Venda</th>
+        <th scope="col">Total de Pontos</th>
+        <th scope="col">#Venda</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let s of salesArray">
+        <th scope="row">{{s.clientID}}</th>
+        <th scope="row">{{c.clientName}}</th>
+        <th scope="row">{{c.clientCPF}}</th>
+        <th scope="row">{{0}}</th>
+      </tr>
+    </tbody>
+  </table>
+</div>
